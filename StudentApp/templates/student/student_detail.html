@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title_block %} {{ student_info.name }}' info..... {% endblock %}
+
+{% block body_block %}
+<h2>{{ student_info.name }}' detail information</h2>
+<table class="table table-bordered table-dark">
+              <thead>
+                <tr>
+
+                  <th scope="col">Name</th>
+                  <th scope="col">Roll</th>
+                  <th scope="col">Class</th>
+                  <th scope="col"><a href="{% url 'Students:student-list' %}" class="btn btn-info btn-sm">Back to student-list</a> </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  <td>{{ student_info.name }}</td>
+                  <td>{{ student_info.std_roll }}</td>
+                  <td>{{ student_info.std_cls }}</td>
+                  <td></td>
+                </tr>
+
+              </tbody>
+            </table>
+{% endblock %}

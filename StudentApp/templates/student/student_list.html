@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title_block %}Student list {% endblock %}
+
+{% block body_block %}
+ <table class="table table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+
+                </tr>
+              </thead>
+              <tbody>
+              {% for student in students %}
+                <tr>
+                  <th scope="row">{{ forloop.counter }}</th>
+                  <td><a href="{% url 'Students:student-detail' std_id=student.pk %}">{{ student.name }}</a> </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+{% endblock %}

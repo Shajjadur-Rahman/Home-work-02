@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block title_block %} District lists {% endblock %}
+
+{% block body_block %}
+
+
+              {% for district in districts %}
+              <h1>{{ district.name }}</h1>
+              <p>{{ district.dis_info | range_filter }} <a href="{% url 'Address:district-detail' id=district.pk %}">Read more</a></p>
+              {% endfor %}
+
+{% endblock %}
